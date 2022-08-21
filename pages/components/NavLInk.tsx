@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const NavLInk: React.FC<{
   href: string;
@@ -9,7 +9,7 @@ const NavLInk: React.FC<{
   return (
     <Link href={href} replace>
       <li
-        className={`m-1 p-4 md:pt-4 bg-inherit md:px-4 rounded-lg cursor-pointer w-auto hover:bg-slate-600 bg-opacity-90 border-solid border-slate-500 border md:border-none md:my-2 md:mx-1 ${
+        className={`md:w-auto m-1 p-4 md:pt-3.5 bg-inherit md:px-4 rounded-lg cursor-pointer md:hover:bg-slate-600 bg-opacity-90 border-solid border-slate-500 border md:border-none md:my-2 md:mx-1 ${
           active && 'bg-slate-900 underline'
         }`}
       >

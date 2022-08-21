@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import NavLInk from './NavLInk';
 
+import HamburgerMenu from './HamburgerMenu';
+import { Avatar, Tooltip } from '@nextui-org/react';
 import Image from 'next/image';
-import menuButton from '../../public/menu-pngrepo-com.png';
+import arturAvatar from '../../public/Artur_foty/artur_logo.jpg';
 
 type NavItem = { key: string; href: string; text: string; active: boolean };
 const navigationItems: NavItem[] = [
@@ -48,21 +50,51 @@ const Navigation: React.FC = () => {
 
   return (
     <nav
-      className={`text-slate-100 transition-all ease-in-out duration-300 w-full flex flex-row justify-center bg-slate-800 bg-opacity-90 overflow-hidden ${
-        showMenu ? 'h-80 md:h-auto' : 'h-16 md:h-auto'
-      }`}
+      className={`select-none text-slate-100 w-full pb-1 flex flex-row justify-center bg-slate-800 bg-opacity-90 overflow-hidden ${
+        showMenu ? 'max-h-96 rounded-b-lg' : 'max-h-17'
+      } transition-all ease-in-out duration-300 md:h-auto`}
     >
-      <ul className="grid-cols-4 m-0 md:flex md:justify-center w-full md:w-4/5 rounded-lg align-baseline">
-        <li
-          className="w-14 p-3 cursor-pointer md:hidden"
-          onClick={() => setShowMenu((prevState) => !prevState)}
-        >
-          <Image src={menuButton} alt="menu icon" />
-        </li>
+      <ul className="grid-cols-4 m-0 md:flex md:justify-start w-full rounded-lg align-baseline">
+        <span className="flex justify-between md:mr-16 lg:mr-32">
+          <li>
+            <Tooltip
+              content="Artur Kowalski - to o nim jest ta strona"
+              placement="bottomStart"
+              color="primary"
+              shadow
+              trigger="click"
+              className="overflow-hidden rounded-full"
+            >
+              <Avatar
+                text="AK"
+                size="xl"
+                src="/Artur_foty/artur_logo.jpg"
+                className="m-1"
+                color="gradient"
+                bordered
+                borderWeight="bold"
+                aria-label="Artur avatar"
+                pointer
+              />
+            </Tooltip>
+          </li>
+          <li className="md:hidden">
+            {/* <Image src={menuButton} alt="menu icon" /> */}
+            <HamburgerMenu
+              onClick={() => setShowMenu((prevState) => !prevState)}
+            />
+          </li>
+        </span>
 
-        {menu.map((item) => (
-          <NavLInk {...item} />
-        ))}
+        <span
+          className={`md:flex ${
+            showMenu ? 'opacity-100' : 'opacity-0'
+          } md:opacity-100 transition-all ease-in-out duration-300`}
+        >
+          {menu.map((item) => (
+            <NavLInk {...item} />
+          ))}
+        </span>
       </ul>
     </nav>
   );

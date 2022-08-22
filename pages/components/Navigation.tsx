@@ -54,7 +54,7 @@ const Navigation: React.FC = () => {
         showMenu ? 'max-h-96 rounded-b-lg' : 'max-h-17'
       } transition-all ease-in-out duration-300 md:h-auto`}
     >
-      <ul className="grid-cols-4 m-0 md:flex md:justify-start w-full rounded-lg align-baseline">
+      <ul className="sticky grid-cols-4 m-0 md:flex md:justify-start w-full rounded-lg align-baseline">
         <span className="flex justify-between md:mr-16 lg:mr-32">
           <li>
             <Tooltip

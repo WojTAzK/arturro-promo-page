@@ -14,3 +14,28 @@
 .subtitle {
   text-shadow: 0.1rem 0.1rem 0.4rem black;
 }
+
+.car {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  background-size: cover;
+  cursor: pointer;
+
+  user-select: none;
+}
+.corsita {
+  background-image: url('/Artur_foty/cash-macanaya-QFfljL1xWvw-unsplash.jpg');
+  background-position: center;
+  min-height: 60vh;
+}
+
+.ford {
+  background-image: url('/Artur_foty/shiv-prajapati-mEqJ80AjBdI-unsplash.jpg');
+  min-height: 60vh;
+  background-position: center;
+}

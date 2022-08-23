@@ -3,3 +3,6 @@ favicon (cursor) - https://pixabay.com/pl/vectors/kursor-palec-r%c4%99ka-hiper%c
 // favicon code generator https://realfavicongenerator.net/ 👍
 
 commodeore - https://unsplash.com/photos/p0j-mE6mGo4
+
+corsita - https://unsplash.com/photos/QFfljL1xWvw
+ford - https://unsplash.com/photos/mEqJ80AjBdI

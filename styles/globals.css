@@ -4,14 +4,15 @@
 
 body {
   width: 100%;
+  height: 100%;
   color: rgb(241, 245, 249);
   background-color: rgb(30, 41, 59);
 
   background: linear-gradient(-45deg, #f07049, #de2e71, #23acde, #1fd7ac);
   background-repeat: no-repeat;
 
-  background-size: 500% 500%;
-  animation: bg-gradient 10s ease infinite;
+  background-size: 1000% 1000%;
+  animation: bg-gradient 15s ease infinite;
 }
 
 .paralax {
@@ -19,6 +20,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .paralax {
+    background-attachment: scroll;
+  }
 }
 
 @keyframes bg-gradient {

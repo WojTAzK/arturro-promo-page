@@ -1,9 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import { Text } from '@nextui-org/react';
 
 import clases from './index.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import arturZdj from '../public/Artur_foty/nagi_artur_edit_xd_small.png';
+import CarModal from './components/car-modal/CarModal';
 
 const MainPage: React.FC = () => {
   return (
@@ -13,7 +16,7 @@ const MainPage: React.FC = () => {
       </Head>
 
       {/* title */}
-      <div className={`${clases.maintitle}  text-5xl text-center`}>
+      <section className={`${clases.maintitle}  text-5xl text-justify`}>
         <div className="m-auto w-5/6 h-fit md:w-fit p-12 mt-16 bg-black bg-opacity-60 rounded-3xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-300 to-purple-500">
             Cześć
@@ -28,23 +31,34 @@ const MainPage: React.FC = () => {
           </span>
         </div>
 
-        <div className={`${clases.subtitle} text-xl font-normal mt-16`}>
+        <div
+          className={`${clases.subtitle} text-xl font-normal mt-16 text-center`}
+        >
           Witaj na wspaniałej stronie o MNIE!!!
         </div>
-      </div>
+      </section>
 
+      {/* Sekcja z opisem */}
       <section
         className={`${clases.main} paralax p-4 text-center bg-slate-800 bg-opacity-90`}
       >
-        {/*  */}
-        <span className="block my-4 mx-0 md:mx-16 text-inherit text-2xl p-4 px-6 rounded-xl mt-16 bg-black bg-opacity-60 text-justify">
+        <div
+          className={`${clases.subtitle} text-2xl font-normal bg-black bg-opacity-60 w-fit m-auto p-8 rounded-3xl`}
+        >
+          Poznaj mnie lepiej
+        </div>
+        {/* Zdjecie XD */}
+        <Image src={arturZdj} alt="Zdjęcie Artura" />
+
+        {/* Opis */}
+        <span className="block my-8 w-11/12 xl:w-fit mx-auto text-inherit text-justify text-2xl p-4 px-6 rounded-xl mt-16 bg-black bg-opacity-60">
           <p>
-            Jestem predsiębiorcą, studentem, pożyczkobiorcą, bezdomnym i
+            Jestem przedsiębiorcą, studentem, pożyczkobiorcą, bezdomnym i
             milionerem* (jeśli pożyczysz mi pare milionów).
           </p>
           <br />
           <p>
-            Uwielbiam Wyjazdy do Legnicy. (Jeśli jestes z legnicy serdecznie
+            Uwielbiam Wyjazdy do Legnicy. {'('}Jeśli jestes z legnicy serdecznie
             zapraszam do sekcji{' '}
             <Link href="/randewu">
               <a className="text-cyan-500">"Umów się ze mną!"</a>
@@ -62,6 +76,48 @@ const MainPage: React.FC = () => {
             Wojtek stoi obok. 👨‍💻🧑‍💻
           </p>
         </span>
+      </section>
+
+      {/* Sekcja z samochodami */}
+      <section>
+        <div
+          className={`${clases.subtitle} my-8 text-2xl font-normal bg-black bg-opacity-60 w-fit m-auto p-8 rounded-3xl`}
+        >
+          Moje Samochodziki
+        </div>
+
+        {/* samochody */}
+        <CarModal
+          title="Corsita"
+          imgSrc="/Artur_foty/cash-macanaya-QFfljL1xWvw-unsplash.jpg"
+          author="@cashmacanaya"
+          imgLink="https://unsplash.com/photos/QFfljL1xWvw"
+        >
+          <div
+            className={`${clases.subtitle} ${clases.corsita} ${clases.car} text-2xl font-normal  w-4/5 m-4 p-8 rounded-3xl`}
+          >
+            Corsita
+          </div>
+        </CarModal>
+
+        <CarModal
+          title="Fordziu"
+          imgSrc="/Artur_foty/shiv-prajapati-mEqJ80AjBdI-unsplash.jpg"
+          author="@saycwanand"
+          imgLink="https://unsplash.com/photos/mEqJ80AjBdI"
+        >
+          <div
+            className={`${clases.subtitle} ${clases.ford} ${clases.car}  text-2xl font-normal  w-fit m-4 p-8 rounded-3xl`}
+          >
+            Fordziu
+          </div>
+        </CarModal>
+
+        <div
+          className={`${clases.subtitle} text-center text-md font-normal m-4`}
+        >
+          *Zdjęcia samochodów mają charakter poglądowy.
+        </div>
       </section>
     </>
   );

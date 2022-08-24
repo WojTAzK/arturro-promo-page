@@ -48,7 +48,7 @@ const MainPage: React.FC = () => {
           Poznaj mnie lepiej
         </div>
         {/* Zdjecie XD */}
-        <Image src={arturZdj} alt="Zdjęcie Artura" />
+        <Image src={arturZdj} alt="Zdjęcie Artura" loading="lazy" />
 
         {/* Opis */}
         <span className="block my-8 w-11/12 xl:w-fit mx-auto text-inherit text-justify text-2xl p-4 px-6 rounded-xl mt-16 bg-black bg-opacity-60">

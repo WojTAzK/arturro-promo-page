@@ -3,10 +3,14 @@ import NavLInk from './NavLInk';
 
 import HamburgerMenu from './HamburgerMenu';
 import { Avatar, Tooltip } from '@nextui-org/react';
-import Image from 'next/image';
-import arturAvatar from '../../public/Artur_foty/artur_logo.jpg';
 
-type NavItem = { key: string; href: string; text: string; active: boolean };
+type NavItem = {
+  key: string;
+  href: string;
+  text: string;
+  active: boolean;
+  hasChildren?: boolean;
+};
 const navigationItems: NavItem[] = [
   {
     key: 'nav_item_1',
@@ -19,6 +23,7 @@ const navigationItems: NavItem[] = [
     href: '/sklep',
     text: 'Sklep',
     active: false,
+    hasChildren: true,
   },
   {
     key: 'nav_item_3',
@@ -38,19 +43,23 @@ const Navigation: React.FC = () => {
   const [menu, setMenu] = useState<NavItem[]>([]);
   const [showMenu, setShowMenu] = useState(false);
 
-  let url = typeof window !== 'undefined' && window.location.pathname;
+  let url = typeof window !== 'undefined' ? window.location.pathname : 'null';
   useEffect(() => {
-    console.log('rendering nav');
-    const updatedNavigationItems = navigationItems.map((item) =>
-      item.href === url ? { ...item, active: true } : item
-    );
+    const updatedNavigationItems = navigationItems.map((item) => {
+      if (item.hasChildren)
+        return url.startsWith(item.href) && url !== '/'
+          ? { ...item, active: true }
+          : item;
+
+      return url === item.href ? { ...item, active: true } : item;
+    });
 
     setMenu(updatedNavigationItems);
   }, [url]);
 
   return (
     <nav
-      className={`select-none text-slate-100 w-full pb-1 flex flex-row justify-center bg-slate-800 bg-opacity-90 overflow-hidden ${
+      className={`select-none z-50 text-slate-100 w-full pb-1 flex flex-row justify-center bg-slate-800 bg-opacity-90 overflow-hidden ${
         showMenu ? 'max-h-96 rounded-b-lg' : 'max-h-17'
       } transition-all ease-in-out duration-300 md:h-auto`}
     >

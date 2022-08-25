@@ -1,17 +1,101 @@
-import Head from 'next/head';
 import React from 'react';
+
+import { Button, Card, Row, Text } from '@nextui-org/react';
+import Head from 'next/head';
+
 import { MerchType } from '../../components/shop/ShopItem';
 import { items } from '../localItems';
 
+import confetti from 'canvas-confetti';
+
 export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
-  const { title, description, price } = props.item;
+  const { title, description, price, img } = props.item;
+
+  const handleClick = () => {
+    confetti({
+      origin: { x: 0.5, y: 1.2 },
+      spread: 120,
+      gravity: -1,
+      particleCount: 100,
+    });
+  };
+
   return (
     <>
       <Head>
-        <title>{}</title>
+        <title>{`Sklep - ${title}`}</title>
       </Head>
-      <div>{props.itemId}</div>
-      <div>{JSON.stringify(props.item)}</div>
+
+      <section className="h-auto md:min-h-screen py-8">
+        <Card className="w-11/12 md:w-4/5 m-auto" variant="bordered">
+          <Card.Header>
+            <Row justify="space-around">
+              <Text h1 size="2rem">
+                {title}
+              </Text>
+            </Row>
+          </Card.Header>
+          <Card.Body>
+            <Row
+              align="center"
+              justify="center"
+              className="flex-wrap md:flex-nowrap"
+            >
+              <Card.Image
+                src={img}
+                width="30rem"
+                objectFit="cover"
+                alt="zdjęcie produktu"
+                className=" rounded-3xl m-8 shadow-xl shadow-neutral-300"
+              />
+
+              <Row wrap="wrap" align="center">
+                <Card className="w-11/12 m-auto">
+                  <Card.Body>
+                    <Text className="p-8">{description}</Text>
+                  </Card.Body>
+                </Card>
+                <Card className="w-11/12 m-auto">
+                  <Card.Body>
+                    <Text className="p-8 m-auto">Cena: {price} $</Text>
+                  </Card.Body>
+                </Card>
+              </Row>
+            </Row>
+          </Card.Body>
+          <Card.Footer
+            isBlurred
+            css={{
+              bgBlur: '#ffffff66',
+            }}
+          >
+            <Row justify="flex-end" wrap="wrap" className="p-4">
+              <Button
+                onClick={handleClick}
+                size="lg"
+                light
+                bordered
+                shadow
+                color="success"
+                className="md:mr-4 w-full md:w-auto my-2 md:my-0"
+              >
+                Kup teraz
+              </Button>
+              <Button
+                onClick={handleClick}
+                size="lg"
+                light
+                bordered
+                shadow
+                color="success"
+                className="w-full md:w-auto"
+              >
+                Dodaj do koszyka
+              </Button>
+            </Row>
+          </Card.Footer>
+        </Card>
+      </section>
     </>
   );
 };

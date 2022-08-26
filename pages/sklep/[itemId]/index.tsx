@@ -8,6 +8,9 @@ import { items } from '../localItems';
 
 import confetti from 'canvas-confetti';
 
+import policeLineImg from '../../../public/sklep_foty/fencing-4331079.png';
+import Image from 'next/image';
+
 export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
   const { title, description, price, img } = props.item;
 
@@ -23,7 +26,7 @@ export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
   return (
     <>
       <Head>
-        <title>{`Sklep - ${title}`}</title>
+        <title>{`Sklep - ${title} 🕺🎶`}</title>
       </Head>
 
       <section className="h-auto md:min-h-screen py-4 md:py-8">
@@ -52,19 +55,22 @@ export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
               <Row wrap="wrap" align="center">
                 <Card className="w-11/12 m-auto shadow-xl shadow-neutral-300">
                   <Card.Body>
-                    <Text className="p-8">{description}</Text>
+                    <Text className="p-8 m-auto">
+                      Cena:{' '}
+                      <span className="text-red-600 text-2xl">{price}$</span>
+                    </Text>
                   </Card.Body>
                 </Card>
                 <Card className="w-11/12 m-auto shadow-xl shadow-neutral-300">
                   <Card.Body>
-                    <Text className="p-8 m-auto">Cena: {price} $</Text>
+                    <Text className="p-8 text-center">{description}</Text>
                   </Card.Body>
                 </Card>
               </Row>
             </Row>
           </Card.Body>
           <Card.Footer isBlurred>
-            <Row justify="flex-end" wrap="wrap" className="p-4">
+            <Row justify="center" wrap="wrap" className="p-4">
               <Button
                 onClick={handleClick}
                 size="lg"
@@ -72,7 +78,7 @@ export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
                 bordered
                 shadow
                 color="success"
-                className="md:mr-4 w-full md:w-auto my-2 md:my-0"
+                className="md:mr-4 w-full md:w-auto my-4 md:my-0"
               >
                 Kup teraz
               </Button>
@@ -90,6 +96,25 @@ export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
             </Row>
           </Card.Footer>
         </Card>
+
+        <div className="my-24">
+          <Image
+            className="w-full saturate-[75%] opacity-95"
+            src={policeLineImg}
+            alt="police line - do not cross"
+          />
+        </div>
+
+        <iframe
+          className="m-auto rounded-3xl mt-4 md:mt-24"
+          width="80%"
+          height="400px"
+          src="https://www.youtube-nocookie.com/embed/GtL1huin9EE?autoplay=1&loop=1"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </section>
     </>
   );

@@ -9,7 +9,7 @@ const index = () => {
   const [maWiekszego, setMaWiekszego] = useState(false);
 
   const inputOnChangeHandler = (event: any) => {
-    if (event.target.value <= 42.69) setMaWiekszego(true);
+    if (event.target.value < 42.2137) setMaWiekszego(true);
     else setMaWiekszego(false);
 
     touched = true;
@@ -30,7 +30,6 @@ const index = () => {
             title={'Czy Artur ma większego niż ja?'}
             className="font-bold text-xl w-full"
           >
-            {/* <Text>Twój rozmiar:</Text>{' '} */}
             <Input
               min={'0'}
               placeholder="12"

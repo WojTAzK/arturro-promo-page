@@ -65,7 +65,7 @@ const CarModal: React.FC<
             color="error"
             onClick={closeModalHandler}
           >
-            Close
+            Zamknij
           </Button>
         </Modal.Footer>
       </Modal>

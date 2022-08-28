@@ -19,7 +19,7 @@ const MainPage: React.FC = () => {
       <section className={`${clases.maintitle}  text-5xl text-justify`}>
         <div className="m-auto w-5/6 h-fit md:w-fit p-12 mt-16 bg-black bg-opacity-60 rounded-3xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-300 to-purple-500">
-            Cześć
+            Cześć,
           </span>
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-300">

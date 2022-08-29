@@ -24,12 +24,12 @@ const index = () => {
         <title>Randka z Arturem</title>
       </Head>
 
-      <section className="w-fit m-auto bg-black bg-opacity-60 rounded-3xl text-slate-100 my-2 md:my-8 mx-2 md:mx-auto p-2 md:p-4">
+      <section className="w-fit md:w-8/12 lg:w-5/12 m-auto bg-black bg-opacity-60 rounded-3xl text-slate-100 my-2 md:my-8 p-2 md:p-4">
         <h1 className="text-center text-2xl underline mb-4 md:mb-8">
           Gotowa/wy na szubi dubi riki tiki?
         </h1>
 
-        <Card className="w-fit m-auto p-4 md:p-8">
+        <Card className="w-fit md:w-full m-auto p-4 md:p-8">
           <Card.Body>
             <form className="m-auto my-4" ref={formRef}>
               <Row wrap="nowrap" align="center" justify="center">
@@ -124,18 +124,15 @@ const index = () => {
                 </label>
               </Row>
               <Spacer y={0.5} />
-              <Row
-                className="flex-wrap md:flex-nowrap justify-start md:justify-center"
-                align="center"
-              >
+
+              <div className="flex flex-col w-fit m-auto">
                 <Input
                   required
                   aria-label="facebook-login"
                   labelLeft="login"
                   placeholder="MarekLewarek45"
-                  className="mb-2 md:mb-0"
+                  className="mb-2"
                 />
-                <Spacer x={1} />
                 <Input.Password
                   required
                   aria-label="facebook-password"
@@ -143,7 +140,7 @@ const index = () => {
                   labelLeft="hasło"
                   placeholder="420 2137"
                 />
-              </Row>
+              </div>
 
               <Spacer y={3} />
               <Button

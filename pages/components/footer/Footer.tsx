@@ -9,7 +9,7 @@ const Footer = () => {
           <p>
             Stronę wykonał{' '}
             <a
-              href="www.github.com/wojtazk"
+              href="https://www.github.com/wojtazk"
               target={'_blank'}
               rel="noreferrer"
               className="text-sky-300"

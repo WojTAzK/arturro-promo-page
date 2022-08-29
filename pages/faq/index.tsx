@@ -5,7 +5,7 @@ import FAQItem from '../components/faq/FAQItem';
 
 let touched = false;
 
-const index = () => {
+const Index = () => {
   const [maWiekszego, setMaWiekszego] = useState(false);
 
   const inputOnChangeHandler = (event: any) => {
@@ -27,13 +27,13 @@ const index = () => {
 
         <Collapse.Group accordion={false} splitted>
           <Collapse
-            title={'Czy Artur ma większego niż ja?'}
+            title="Czy Artur ma większego niż ja?"
             className="font-bold text-xl w-full"
           >
             <Input
-              min={'0'}
+              min="0"
               placeholder="12"
-              type={'number'}
+              type="number"
               label="Twój rozmiar:"
               labelRight="cm"
               onChange={inputOnChangeHandler}
@@ -70,15 +70,15 @@ const index = () => {
             legalnie uprawiać sporty ekstremalne w łóżku...
             <br />
             To TAK można, ale nw jaki sport ekstremalny się uprawia w 2 minuty
-            (co ja gadam "2 minuty", bardziej 30 sekund).
+            (co ja gadam &quot;2 minuty&quot;, bardziej 30 sekund).
           </FAQItem>
           <FAQItem title="Jakiej płci jest Arturito?">
             W poniedziałki jest Działem samobieżnym z I wojny światowej.
             <br />
-            W resztę dni identyfikuje się jako *"PDF File" (Plik PDF)
+            W resztę dni identyfikuje się jako *&quot;PDF File&quot; (Plik PDF)
             <br />
             <br />
-            *czytaj "Pedophile"
+            *czytaj &quot;Pedophile&quot;
           </FAQItem>
           <FAQItem title="Czy Artur ma psa?">
             Po co ci taka wiedza? (Ma)
@@ -88,7 +88,8 @@ const index = () => {
           </FAQItem>
           <FAQItem title="Czy Artur jest seksistą?">
             <span className="italic">
-              "Kto ci pozwolił wyjść z kuchni, łap za mopa i wypi******j stąd."
+              &quot;Kto ci pozwolił wyjść z kuchni, łap za mopa i wypi******j
+              stąd.&quot;
             </span>
             <br /> ~ Artur Kowalski (podczas rozmowy z ojcem)
           </FAQItem>
@@ -98,4 +99,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

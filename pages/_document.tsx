@@ -23,6 +23,11 @@ class MyDocument extends Document {
         <Head>
           {CssBaseline.flush()}
           <meta name="theme-color" content="rgb(30, 41, 59)" />
+          <meta
+            name="description"
+            content="Strona o najważniejszej postaci XXI wieku - Arturze Kowalskim"
+          />
+          <meta name="author" content="Wojciech Kowal" />
 
           {/* Favicons */}
           <link

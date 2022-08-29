@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Button, Card, Row, Text } from '@nextui-org/react';
 import Head from 'next/head';
 
 import { MerchType } from '../../components/shop/ShopItem';
-import { items } from '../localItems';
+import { items } from '../../lib/_localItems';
 
 import confetti from 'canvas-confetti';
 
 import policeLineImg from '../../../public/sklep_foty/fencing-4331079.png';
 import Image from 'next/image';
 
-export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
+export const Index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
   const { title, description, price, img } = props.item;
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     confetti({
-      origin: { x: 0.5, y: 1.2 },
-      spread: 100,
+      origin: { y: 1 },
       gravity: -1,
-      particleCount: 100,
+      spread: 70,
+      particleCount: 70,
     });
-  };
+  }, []);
 
   return (
     <>
@@ -119,7 +119,7 @@ export const index: React.FC<{ itemId: string; item: MerchType }> = (props) => {
     </>
   );
 };
-export default index;
+export default React.memo(Index);
 
 export async function getStaticPaths() {
   const localPathNames = items.map((item) => ({ params: { itemId: item.id } }));
@@ -127,14 +127,10 @@ export async function getStaticPaths() {
   const pathNames = [];
   for (let i = 1; i <= 30; i++) pathNames.push({ params: { itemId: i + '' } });
 
-  return { paths: [...localPathNames, ...pathNames], fallback: false };
+  return { paths: [...localPathNames, ...pathNames], fallback: 'blocking' };
 }
 
-export async function getStaticProps({
-  params,
-}: {
-  params: { itemId: string };
-}) {
+export async function getStaticProps({ params }: any) {
   let item = {};
   if (params.itemId.startsWith('local')) {
     [item] = items.filter((item) => item.id === params.itemId);
@@ -143,7 +139,6 @@ export async function getStaticProps({
       `https://dummyjson.com/products/${params.itemId}`
     );
     const data = await response.json();
-
     item = {
       itemId: data.id,
       id: `loaded-item-${data.id}`,

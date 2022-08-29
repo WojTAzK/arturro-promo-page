@@ -11,6 +11,7 @@ const Footer = () => {
             <a
               href="www.github.com/wojtazk"
               target={'_blank'}
+              rel="noreferrer"
               className="text-sky-300"
             >
               Wojciech Kowal 🖥️🖱️
@@ -21,6 +22,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/kowalwojtek/"
               target={'_blank'}
+              rel="noreferrer"
               className="text-violet-400"
             >
               @kowalwojtek
@@ -35,6 +37,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/dynius1007/"
               target={'_blank'}
+              rel="noreferrer"
               className="text-violet-400"
             >
               @dynius1007
@@ -49,6 +52,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/talkos17/"
               target={'_blank'}
+              rel="noreferrer"
               className="text-violet-400"
             >
               @talkos17

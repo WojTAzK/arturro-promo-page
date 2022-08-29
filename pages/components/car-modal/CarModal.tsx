@@ -39,18 +39,24 @@ const CarModal: React.FC<
         </Modal.Header>
 
         <Modal.Body>
-          <Image src={props.imgSrc} />
+          <Image src={props.imgSrc} alt="samochód" />
           <Text size={16}>
             Photo by{' '}
             <a
               href={`https://unsplash.com/${props.author}`}
               target="_blank"
+              rel="noreferrer"
               className="text-cyan-500"
             >
               {props.author}
             </a>{' '}
             on{' '}
-            <a href={props.imgLink} target="_blank" className="text-cyan-500">
+            <a
+              href={props.imgLink}
+              target="_blank"
+              rel="noreferrer"
+              className="text-cyan-500"
+            >
               Unsplash
             </a>
           </Text>

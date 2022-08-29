@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import ShopItem, { MerchType } from '../components/shop/ShopItem';
 
-import { items } from './localItems';
+import { items } from '../lib/_localItems';
 import { Loading } from '@nextui-org/react';
 
-const index = () => {
+const Index = () => {
   const [loadedItems, setLoadedItems] = useState<MerchType[]>([]);
   const [loading, setIsLoading] = useState(true);
 
@@ -57,4 +57,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

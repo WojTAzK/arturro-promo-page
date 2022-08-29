@@ -10,7 +10,7 @@ import {
 import Head from 'next/head';
 import React, { useRef, useState } from 'react';
 
-const index = () => {
+const Index = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -197,4 +197,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

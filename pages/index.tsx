@@ -61,7 +61,7 @@ const MainPage: React.FC = () => {
             Uwielbiam Wyjazdy do Legnicy. {'('}Jeśli jestes z legnicy serdecznie
             zapraszam do sekcji{' '}
             <Link href="/randewu">
-              <a className="text-cyan-500">"Umów się ze mną!"</a>
+              <a className="text-cyan-500">&quot;Umów się ze mną!&quot;</a>
             </Link>
             {')'}
           </p>

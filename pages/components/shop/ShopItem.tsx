@@ -13,6 +13,7 @@ export type MerchType = {
 
 const ShopItem: React.FC<MerchType> = ({ id, itemId, title, price, img }) => {
   const itemPath = itemId ? itemId : id;
+  const newPrice = price ? price : NaN;
 
   return (
     <Link href={`/sklep/${itemPath}`}>
@@ -43,7 +44,7 @@ const ShopItem: React.FC<MerchType> = ({ id, itemId, title, price, img }) => {
                   fontSize: '$sm',
                 }}
               >
-                {price.toFixed(2)} $
+                {newPrice.toFixed(2)} $
               </Text>
             </Row>
           </Card.Body>

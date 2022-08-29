@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const items = [
   {
     id: 'local-item-1',
@@ -32,3 +34,9 @@ export const items = [
     img: '/sklep_foty/hisu-lee-2qvxIr_DXGo-unsplash.jpg',
   },
 ];
+
+const DUMMY = () => {
+  return <></>;
+};
+
+export default DUMMY;
